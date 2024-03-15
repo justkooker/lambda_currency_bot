@@ -1,4 +1,0 @@
-worker: node app.js
-
-
-
