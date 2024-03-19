@@ -92,7 +92,7 @@ bot.on('message', async (msg) => {
             usdCur = currency.find(el => el.ccy === 'USD' && el.base_ccy === 'UAH');
         }
 
-        bot.sendMessage(chatId, `USD \n Buy: ${isMono ? usdCur?.rateBuy : usdCur?.buy} UAH    Sell: ${isMono ? usdCur?.rateSell : usdCur?.sale} UAH`);
+        bot.sendMessage(chatId, `USD \n Buy: ${isMono ? usdCur?.rateBuy.toFixed(2) : usdCur?.buy.toFixed(2)} UAH    Sell: ${isMono ? usdCur?.rateSell.toFixed(2) : usdCur?.sale.toFixed(2)} UAH`);
     }
 
     if (msgText === 'eur') {
@@ -105,7 +105,7 @@ bot.on('message', async (msg) => {
         } else {
             eurCur = currency.find(el => el.ccy === 'EUR' && el.base_ccy === 'UAH')
         }
-        bot.sendMessage(chatId, `EUR \n Buy: ${isMono ? eurCur?.rateBuy : eurCur?.buy} UAH    Sell: ${isMono ? eurCur?.rateSell : eurCur?.sale} UAH`);
+        bot.sendMessage(chatId, `EUR \n Buy: ${isMono ? eurCur?.rateBuy.toFixed(2) : eurCur?.buy.toFixed(2)} UAH    Sell: ${isMono ? eurCur?.rateSell.toFixed(2) : eurCur?.sale.toFixed(2)} UAH`);
     }
     async function makeCurrencyMenu() {
         try {
